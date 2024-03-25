@@ -6,11 +6,11 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 @Service
 @RequiredArgsConstructor
@@ -23,11 +23,11 @@ public class CacheManagerService {
 
     @PostConstruct
     private void loadCache() {
-        log.info("Reading all orders");
+        /*log.info("Reading all orders");
         List<OrderDetailsModel> orders = orderRepo.findAll();
         log.info("Found {} orders on database", orders.size());
         orders.forEach(order -> {
             mapCache.computeIfAbsent(order.getMid(), k -> new ArrayList<>()).add(order);
-        });
+        });*/
     }
 }
